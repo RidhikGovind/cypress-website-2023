@@ -1,0 +1,748 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ButtonDefault from '../components/ButtonDefault.astro';
+import BannerFooterSection from '../components/BannerFooterSection.astro';
+---
+
+<script
+	type="text/javascript"
+	src="https://assets.calendly.com/assets/external/widget.js"
+></script>
+
+<style>
+	.calendly-widget-overlay {
+		position: fixed;
+		display: none;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 9999;
+		cursor: pointer;
+	}
+
+	.calendly-inline-widget {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		/* display: none; */
+	}
+
+	.calendly-widget-close {
+		z-index: 999999;
+		padding: 2rem;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.testimonial-container {
+		background: no-repeat url('/images/wave-pink.svg');
+		background-size: contain;
+		background-position: bottom right;
+		background-color: #ffecf7;
+	}
+
+	@media (max-width: 520px) {
+		.testimonial-container {
+			background-position: bottom -40px right -20px;
+		}
+	}
+
+	.banner--belowFold {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.blob-left {
+		position: absolute;
+		top: -5%;
+		left: -25%;
+		z-index: -9999;
+		opacity: 60%;
+	}
+	.blob-right {
+		position: absolute;
+		top: 15%;
+		right: -25%;
+		z-index: -9999;
+		opacity: 80%;
+	}
+</style>
+
+<BaseLayout title="Tensaw.health | No hassle patient marketing for physicians">
+	<main>
+		<div class="container md:max-w-full">
+			<!-- Hero -->
+			<div
+				class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-16 mx-auto"
+			>
+				<!-- Grid -->
+				<div
+					class="grid md:grid-cols-2 gap-12 md:gap-16 xl:gap-20 md:items-center"
+				>
+					<div>
+						<h1
+							class="block text-3xl tracking-tighter font-bold text-gray-800 lg:text-5xl lg:leading-tight dark:text-white"
+						>
+							Virtual medical assistants and receptionists starting at
+							$399/month when
+							<span class="text-emerald-700 block"
+								>Staffing cost is out-of-control
+							</span>
+						</h1>
+						<p
+							class="mt-4 text-lg text-gray-800 dark:text-gray-400 md:text-2xl -2xt-center"
+						>
+							We help medical practices reduce costs, grow faster through our
+							HIPAA trained, dedicated virtual assistants.
+						</p>
+
+						<button
+							type="button"
+							class="py-3 px-4 mt-6 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+						>
+							<a onclick="openCalendlyWidget()" href="#calendly">
+								Schedule a meeting with an expert
+							</a>
+						</button>
+					</div>
+					<!-- End Col -->
+
+					<div class="relative">
+						<img
+							class="w-full max-w-full"
+							src="/images/homepage-hero-pic.png"
+							alt="Image Description"
+						/>
+					</div>
+					<!-- End Col -->
+				</div>
+				<!-- End Grid -->
+			</div>
+			<!-- End Hero -->
+
+			<!-- Why choose Cypress Banner -->
+			<div
+				class="banner--belowFold max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:py-16 mx-auto"
+			>
+				<div class="blob-left">
+					<img src="/images/gradientblob-left.svg" alt="" />
+				</div>
+				<!-- Title -->
+				<div
+					class="max-w-4xl mx-auto text-center mb-10 lg:mb-14 border border-gray-300 p-16 rounded-md shadow-sm"
+				>
+					<div class="flex flex-col gap-4">
+						<h2
+							class="text-2xl font-bold md:text-4xl text-gray-800 dark:text-white leading-tight"
+						>
+							Try Cypress, your affordable virtual medical assistant.
+						</h2>
+						<ul class="grid grid-rows-3 gap-5 justify-center mt-6">
+							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
+								<span
+									class="text-gray-800 dark:text-gray-400 text-2xl text-center"
+								>
+									Truly dedicated virtual assistant</span
+								>
+								<svg
+									class="flex-shrink-0 h-6 w-6"
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
+										fill="currentColor"
+										class="fill-emerald-700"></path>
+									<path
+										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
+										fill="currentColor"
+										class="fill-white"></path>
+								</svg>
+							</li>
+
+							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
+								<span
+									class="text-gray-800 dark:text-gray-400 text-2xl text-center"
+								>
+									Works like a regular team member in your practice</span
+								>
+								<svg
+									class="flex-shrink-0 h-6 w-6"
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
+										fill="currentColor"
+										class="fill-emerald-700"></path>
+									<path
+										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
+										fill="currentColor"
+										class="fill-white"></path>
+								</svg>
+							</li>
+
+							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
+								<span class="text-gray-800 dark:text-gray-400 text-2xl">
+									Unlimited work. Monthly Fixed rate - starting $399/mo
+								</span>
+								<svg
+									class="flex-shrink-0 h-6 w-6"
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
+										fill="currentColor"
+										class="fill-emerald-700"></path>
+									<path
+										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
+										fill="currentColor"
+										class="fill-white"></path>
+								</svg>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Title -->
+				<div class="blob-right">
+					<img src="/images/gradientblob-left.svg" alt="" />
+				</div>
+			</div>
+			<!-- End Why choose Cypress Banner -->
+
+			<!-- Testimonials -->
+			<div class="relative overflow-hidden">
+				<div class="mx-auto bg-[#FEEFE5] min-h-[480px]">
+					<!-- Grid -->
+					<div
+						class="testimonial-container max-w-5xl bg-[#FEEFE5] p-8 py-10 flex lg:items-center rounded-md justify-center mx-auto"
+					>
+						<div>
+							<!-- Blockquote -->
+							<blockquote>
+								<img src="/images/quotes-big.svg" alt="" class="mb-8" />
+								<p
+									class="font-semibold text-gray-800 lg:text-3xl lg:leading-normal dark:text-gray-200 mb-4"
+								>
+									As a small practice, attracting and retaining staff has been a
+									challenge. Cypress virtual assistance helped me manage my
+									faxes and referrals.
+								</p>
+								<p
+									class="font-medium lg:text-xl text-gray-800 dark:text-gray-200"
+								>
+									Director - Covenant Women's Health
+								</p>
+							</blockquote>
+							<!-- End Blockquote -->
+						</div>
+
+						<img
+							src="/images/director-covenanthealth.png"
+							alt=""
+							style="width: 40%;"
+						/>
+					</div>
+					<!-- End Grid -->
+				</div>
+			</div>
+			<!-- End Testimonials -->
+
+			<!-- What Cypress VMAs Do -->
+			<div
+				class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:py-32 mx-auto grid grid-auto-row gap-16"
+			>
+				<div class="max-w-4xl text-center mx-auto">
+					<h2
+						class="text-3xl text-gray-800 font-bold lg:text-4xl dark:text-white"
+					>
+						What Cypress VMAs Do for their Clients
+					</h2>
+					<p class="mt-4 text-gray-800 dark:text-gray-400">
+						Cypress Medical Assistants and Receptionists can do any work that
+						doesn’t require in-person interaction with your patients. Here is a
+						list of typical tasks that are assigned to our virtual medical
+						assistants
+					</p>
+				</div>
+
+				<div class="grid grid-row-2 gap-8">
+					<!-- Icon Blocks -->
+					<div
+						class="grid sm:grid-cols-auto lg:grid-cols-3 items-start justify-start gap-12"
+					>
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-1.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Records Management
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Manage fax queue, label documents, attach to patient’s chart,
+									forward them to the correct recipient. Create new patient from
+									referrals; Enter lab results
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-2.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Prescription Management
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Answer patients/pharmacies requesting medication refills. Call
+									the pharmacy to check medication refills.
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-3.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Prior Authorization
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Request prescription prior authorization through the online
+									portal, fax, and phone. Calls pharmacy and patient to inform
+									prior authorization determination (approved or denied)
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+					</div>
+					<!-- End Icon Blocks -->
+
+					<div
+						class="grid sm:grid-cols-auto lg:grid-cols-3 items-start justify-start gap-12"
+					>
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-4.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Records Management
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Manage fax queue, label documents, attach to patient’s chart,
+									forward them to the correct recipient. Create new patient from
+									referrals; Enter lab results
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-5.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Patient Outreach
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Calling patients to schedule their due appointments such as
+									IHA, AWV, and well-child/person visits.
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-6.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Receptionist
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Triage all incoming calls and transfer them to the appropriate
+									staff. Manage appointments Register new patients
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+					</div>
+
+					<!-- Icon Blocks -->
+					<div
+						class="grid sm:grid-cols-auto lg:grid-cols-3 items-start justify-start gap-12"
+					>
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-7.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Chart Prep
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Prepare charts before the physician sees the patient
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+						<!-- Icon Block -->
+						<div
+							class="text-center border border-slate-200 p-8 rounded-md"
+							style="height: 100%"
+						>
+							<img
+								src="/icons/pageicons/homeSectionIcon-8.svg"
+								class="mx-auto"
+								alt=""
+							/>
+							<div class="mt-4">
+								<h3 class="text-xl font-semibold text-gray-800 dark:text-white">
+									Scribe
+								</h3>
+								<p class="mt-2 text-gray-600 dark:text-gray-400">
+									Transcribe physician notes, prepare orders for transmission to
+									pharmacies and labs
+								</p>
+							</div>
+						</div>
+						<!-- End Icon Block -->
+					</div>
+					<!-- End Icon Blocks -->
+				</div>
+			</div>
+			<!-- What Cypress VMAs Do -->
+
+			<!-- Testimonials -->
+			<div class="relative overflow-hidden">
+				<div class="bg-[#FEEFE5] min-h-[480px] m-auto flex">
+					<!-- Grid -->
+					<div
+						class="testimonial-container max-w-5xl bg-[#FEEFE5] p-8 py-10 flex lg:items-center rounded-md justify-center mx-auto gap-4"
+					>
+						<div>
+							<!-- Blockquote -->
+							<blockquote>
+								<img src="/images/quotes-big.svg" alt="" class="mb-8" />
+								<p
+									class="font-semibold text-gray-800 lg:text-3xl lg:leading-normal dark:text-gray-200 mb-4"
+								>
+									Cypress was crucial for our startup's cash conservation and
+									efficient ramp-up in our first year. Highly recommended.
+								</p>
+								<p
+									class="font-medium lg:text-xl text-gray-800 dark:text-gray-200"
+								>
+									Director - Beats cardiology
+								</p>
+							</blockquote>
+							<!-- End Blockquote -->
+						</div>
+
+						<img
+							src="/images/beatsCardiology-logo.png"
+							alt=""
+							style="width: 40%;"
+						/>
+					</div>
+					<!-- End Grid -->
+				</div>
+			</div>
+			<!-- End Testimonials -->
+
+			<!-- Features -->
+			<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto lg:py-32">
+				<div class="relative p-6 md:p-16">
+					<!-- Grid -->
+					<div
+						class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center"
+					>
+						<div class="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+							<h2
+								class="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-gray-200"
+							>
+								Getting Started is as <br /> easy as 1-2-3
+							</h2>
+							<p class="mt-4 text-gray-800 dark:text-gray-400">
+								Cypress Medical Assistants and Receptionists can do any work
+								that doesn’t require in-person interaction with your patients.
+							</p>
+
+							<!-- Tab Navs -->
+							<nav
+								class="grid gap-4 mt-5 md:mt-10"
+								aria-label="Tabs"
+								role="tablist"
+							>
+								<button
+									type="button"
+									class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-left hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700 active"
+									id="tabs-with-card-item-1"
+									data-hs-tab="#tabs-with-card-1"
+									aria-controls="tabs-with-card-1"
+									role="tab"
+								>
+									<span class="flex items-start">
+										<svg
+											class="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"
+											></path>
+											<path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+										</svg>
+										<span class="grow ml-6">
+											<span
+												class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+												>Schedule a 1:1 call</span
+											>
+											<span
+												class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200"
+												>Use our sign up tool to submit your job
+												description/requirements quickly and easily.</span
+											>
+										</span>
+									</span>
+								</button>
+
+								<button
+									type="button"
+									class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-left hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700"
+									id="tabs-with-card-item-2"
+									data-hs-tab="#tabs-with-card-2"
+									aria-controls="tabs-with-card-2"
+									role="tab"
+								>
+									<span class="flex">
+										<svg
+											class="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"
+											></path>
+										</svg>
+										<span class="grow ml-6">
+											<span
+												class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+												>Success Manager assigned</span
+											>
+											<span
+												class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200"
+												>We assign a success manager who will identify the
+												virtual assistant and will get things started.</span
+											>
+										</span>
+									</span>
+								</button>
+
+								<button
+									type="button"
+									class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-left hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-slate-900 dark:hover:bg-gray-700"
+									id="tabs-with-card-item-3"
+									data-hs-tab="#tabs-with-card-3"
+									aria-controls="tabs-with-card-3"
+									role="tab"
+								>
+									<span class="flex">
+										<svg
+											class="flex-shrink-0 mt-2 h-6 w-6 md:w-7 md:h-7 hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1H6.374z"
+											></path>
+										</svg>
+										<span class="grow ml-6">
+											<span
+												class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-600 dark:text-gray-200"
+												>Virtual Assistant starts work</span
+											>
+											<span
+												class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-gray-200"
+												>We go over the work details and custom practice
+												specifics during a kick-off meeting.</span
+											>
+										</span>
+									</span>
+								</button>
+							</nav>
+							<!-- End Tab Navs -->
+						</div>
+						<!-- End Col -->
+
+						<div class="lg:col-span-6">
+							<div class="relative">
+								<!-- Tab Content -->
+								<div>
+									<div
+										id="tabs-with-card-1"
+										role="tabpanel"
+										aria-labelledby="tabs-with-card-item-1"
+									>
+										<img
+											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+											src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											alt="Image Description"
+										/>
+									</div>
+
+									<div
+										id="tabs-with-card-2"
+										class="hidden"
+										role="tabpanel"
+										aria-labelledby="tabs-with-card-item-2"
+									>
+										<img
+											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+											src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											alt="Image Description"
+										/>
+									</div>
+
+									<div
+										id="tabs-with-card-3"
+										class="hidden"
+										role="tabpanel"
+										aria-labelledby="tabs-with-card-item-3"
+									>
+										<img
+											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
+											src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											alt="Image Description"
+										/>
+									</div>
+								</div>
+								<!-- End Tab Content -->
+
+								<!-- SVG Element -->
+								<div
+									class="hidden absolute top-0 right-0 translate-x-20 md:block lg:translate-x-20"
+								>
+									<svg
+										class="w-16 h-auto text-orange-500"
+										width="121"
+										height="135"
+										viewBox="0 0 121 135"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164"
+											stroke="currentColor"
+											stroke-width="10"
+											stroke-linecap="round"></path>
+										<path
+											d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
+											stroke="currentColor"
+											stroke-width="10"
+											stroke-linecap="round"></path>
+										<path
+											d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874"
+											stroke="currentColor"
+											stroke-width="10"
+											stroke-linecap="round"></path>
+									</svg>
+								</div>
+								<!-- End SVG Element -->
+							</div>
+						</div>
+						<!-- End Col -->
+					</div>
+					<!-- End Grid -->
+
+					<!-- Background Color -->
+					<div class="absolute inset-0 grid grid-cols-12 w-full h-full">
+						<div
+							class="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full dark:bg-white/[.075]"
+						>
+						</div>
+					</div>
+					<!-- End Background Color -->
+				</div>
+			</div>
+			<!-- End Features -->
+
+			<BannerFooterSection />
+		</div>
+	</main>
+</BaseLayout>

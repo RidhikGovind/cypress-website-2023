@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BannerFooterSection from '../components/BannerFooterSection.astro';
+---
+
+<BaseLayout title="Managing Prior Authorizations | Cypress.health">
+	<main>
+		<div class="container md:max-w-full">
+			<!-- Hero -->
+			<div
+				class="max-w-[85rem] md:max-w-full mx-auto pt-10 pb-10 px-4 sm:px-6 lg:px-8 bg-neutral-100"
+			>
+				<!-- Grid -->
+				<div
+					class="grid md:grid-cols-2 gap-12 md:gap-16 xl:gap-20 md:items-center"
+				>
+					<div>
+						<h1
+							class="block text-4xl tracking-tighter font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white"
+						>
+							Managing Prior Authorizations
+						</h1>
+						<p class="mt-4 text-lg text-gray-800 dark:text-gray-400">
+							Prior authorizations is a time consuming process costing your
+							practice a lot of time for your tests, procedures & surgeries. Not
+							addressing this area can lead to a lot of lost revenue.
+						</p>
+
+						<button
+							type="button"
+							class="py-3 px-4 mt-6 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+						>
+							<a onclick="openCalendlyWidget()" href="#calendly">
+								Schedule a meeting with an expert
+							</a>
+						</button>
+					</div>
+					<!-- End Col -->
+
+					<div class="relative">
+						<img
+							class="w-full max-w-full"
+							src="/images/prior-auth-img-cover.png"
+							alt="Image Description"
+						/>
+					</div>
+					<!-- End Col -->
+				</div>
+				<!-- End Grid -->
+			</div>
+			<!-- End Hero -->
+
+			<!-- Features -->
+			<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+				<!-- Testimonials -->
+				<div class="relative overflow-hidden">
+					<div class="mx-auto bg-[#FEEFE5] min-h-[480px]">
+						<!-- Grid -->
+						<div
+							class="testimonial-container max-w-5xl bg-[#FEEFE5] p-8 py-10 flex lg:items-center rounded-md justify-center mx-auto"
+						>
+							<div>
+								<!-- Blockquote -->
+								<blockquote>
+									<img src="/images/quotes-big.svg" alt="" class="mb-8" />
+									<p
+										class="font-semibold text-gray-800 lg:text-3xl lg:leading-normal dark:text-gray-200 mb-4"
+									>
+										As a small practice, attracting and retaining staff has been
+										a challenge. Cypress virtual assistance helped me manage my
+										faxes and referrals.
+									</p>
+									<p
+										class="font-medium lg:text-xl text-gray-800 dark:text-gray-200"
+									>
+										Director - Covenant Women's Health
+									</p>
+								</blockquote>
+								<!-- End Blockquote -->
+							</div>
+
+							<img
+								src="/images/director-covenanthealth.png"
+								alt=""
+								style="width: 40%;"
+							/>
+						</div>
+						<!-- End Grid -->
+					</div>
+				</div>
+				<!-- End Testimonials -->
+
+				<div class="bg-white">
+					<div class="grid grid-col-6 gap-12 px-4 py-8">
+						<!-- Grid - Feature 1 -->
+						<div
+							class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32 mt-6"
+						>
+							<div class="mt-5 sm:mt-10 lg:mt-0">
+								<div class="space-y-6 sm:space-y-8">
+									<!-- Title -->
+									<div class="space-y-2 md:space-y-4">
+										<h2
+											class="font-bold text-2xl lg:text-3xl text-gray-800 dark:text-gray-200"
+										>
+											Prior Authorizations
+										</h2>
+										<p class="text-gray-500">
+											Verify benefits with the payor. Get prior authorizations
+											for tests, procedures & surgeries if required including
+											initiation, follow-ups and documentation requests.
+										</p>
+									</div>
+									<!-- End Title -->
+								</div>
+							</div>
+							<!-- End Col -->
+
+							<div>
+								<img
+									class=""
+									src="/images/prior-auth-img-1.png"
+									alt="Image Description"
+								/>
+							</div>
+							<!-- End Col -->
+						</div>
+						<!-- End Grid -->
+
+						<!-- Grid - Feature 2 -->
+						<div
+							class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32"
+						>
+							<div class="mt-5 sm:mt-10 lg:mt-0">
+								<div class="space-y-6 sm:space-y-8">
+									<!-- Title -->
+									<div class="space-y-2 md:space-y-4">
+										<h2
+											class="font-bold text-2xl lg:text-3xl text-gray-800 dark:text-gray-200"
+										>
+											Coordination
+										</h2>
+										<p class="text-gray-500">
+											Call the patient to inform prior authorization
+											determination and schedule appointment. Coordinate
+											peer-to-peer review requests with the physician.
+											Reschedule appointments if authorization is pending.
+										</p>
+									</div>
+									<!-- End Title -->
+								</div>
+							</div>
+
+							<div>
+								<img
+									class=""
+									src="/images/prior-auth-img-2.png"
+									alt="Image Description"
+								/>
+							</div>
+							<!-- End Col -->
+						</div>
+						<!-- End Grid -->
+					</div>
+				</div>
+			</div>
+			<!-- End Features -->
+
+			<BannerFooterSection />
+		</div>
+	</main>
+</BaseLayout>
