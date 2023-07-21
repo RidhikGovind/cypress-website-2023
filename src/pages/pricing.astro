@@ -9,1683 +9,811 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 ></script>
 
 <style>
-	/* ------------ CALENDLY WIDGET STYLES ------------------- */
-	.calendly-widget-overlay {
-		position: fixed;
-		display: none;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 9999;
-		cursor: pointer;
+	.container-hero {
+		position: relative;
+		overflow: hidden;
+		z-index: 10;
 	}
 
-	.calendly-inline-widget {
+	.hero-gradient-circle-top {
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 9999;
-		/* display: none; */
+		top: -30%;
+		right: -30%;
+		z-index: -10;
 	}
-
-	.calendly-widget-close {
-		z-index: 999999;
-		padding: 2rem;
-		color: #fff;
+	.hero-gradient-circle-bottom {
 		position: absolute;
-		top: 0;
-		right: 0;
-	}
-
-	.testimonial-container {
-		background: no-repeat url('/images/wave-pink.svg');
-		background-size: contain;
-		background-position: bottom right;
-		background-color: #ffecf7;
-	}
-
-	@media (max-width: 520px) {
-		.testimonial-container {
-			background-position: bottom -40px right -20px;
-		}
+		bottom: -20%;
+		left: -30%;
+		z-index: -10;
 	}
 </style>
 
-<BaseLayout title="Pricing for Tensaw | Tensaw.health">
+<BaseLayout title="Pricing for Cypress | Cypress.health">
 	<main>
 		<div class="container md:max-w-full">
 			<!-- Hero -->
-			<div class="relative bg-neutral-100">
-				<!-- Gradients -->
-				<!-- <div aria-hidden="true" class="flex absolute -top-48 left-0 -z-[1]">
-					<div
-						class="bg-teal-200 opacity-30 blur-3xl w-[1536px] h-[600px] dark:bg-teal-900 dark:opacity-20"
-					>
-					</div>
-				</div> -->
-				<!-- End Gradients -->
+			<div class="container-hero relative bg-emerald-700">
+				<img
+					class="hero-gradient-circle-top"
+					src="/images/gradient-circle-large.svg"
+					alt=""
+				/>
 
 				<div
-					class="max-w-[85rem] md:max-w-7xl px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-16 mx-auto"
+					class="max-w-[85rem] md:max-w-7xl px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-32 mx-auto"
 				>
 					<!-- Grid -->
-					<div class="max-w-5xl mx-auto">
+					<div class="max-w-5xl mx-auto text-left">
 						<div>
 							<h1
-								class="block text-5xl text-center tracking-tighter font-bold text-slate-900 sm:text-4xl lg:text-8xl lg:leading-none dark:text-white"
+								class="block text-5xl text-center tracking-tighter font-bold text-white sm:text-4xl lg:text-8xl lg:leading-none dark:text-white"
 							>
-								Affordable physician marketing for <span
-									class="text-transparent bg-clip-text bg-gradient-to-r from-[#FD3E81] to-[#486DD0] background-animate"
-									>growth</span
-								>
+								Unlimited Virtual Medical Assistant Plan
 							</h1>
+							<p
+								class="mt-6 font-inter text-2xl text-center w-100 max-w-2xl m-auto text-white dark:text-gray-400"
+							>
+								Get a Dedicated Virtual Medical Assistant with Unlimited Work at
+								an Affordable Monthly Price
+							</p>
 						</div>
 						<!-- End Col -->
 					</div>
 					<!-- End Grid -->
 
-					<!-- Grid -->
-					<div
-						class="mt-6 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-3 xl:gap-6 lg:items-top"
-					>
-						<!-- Card -->
-						<div
-							class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
-						>
-							<h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">
-								BASIC
-							</h4>
+					<!-- Pricing Grid start  -->
+					<div class="grid gap-32 mt-32">
+						<!-- Medical Receptionist & Records Management Category - 1 -->
+						<div>
+							<h1
+								class="block text-5xl text-center tracking-tighter text-white lg:leading-none dark:text-white py-8"
+							>
+								Medical Receptionist & Records Management
+							</h1>
 
-							<p class="mt-6 mb-3">
-								<span
-									class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-									><span class="text-xl">$</span>1000</span
+							<!-- Grid -->
+							<div
+								class="mt-6 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-3 xl:gap-6 lg:items-top"
+							>
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
 								>
-							</p>
-
-							<p class="text-base text-gray-700">
-								One time payment. Basic plan. Maximum Value.
-							</p>
-							<!-- <a
-								class="mt-5 calendly-open-button inline-flex lg:text-base text-white justify-center items-center gap-2 bg-teal-700 border-teal-900 hover:bg-teal-800 font-medium hover:shadow-md focus:outline-none transition-all text-sm py-3 px-4 dark:text-white-500 dark:border-violet-900 dark:hover:border-violet-700"
-								onclick="openCalendlyWidget()"
-								href="#calendly"
-							>
-								Contact us
-							</a> -->
-
-							<button
-								type="button"
-								class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
-							>
-								<a onclick="openCalendlyWidget()" href="#calendly">
-									Start with Basics
-								</a>
-							</button>
-
-							<ul class="mt-7 space-y-2.5 text-sm">
-								<li class="flex space-x-2">
-									<span
-										class="text-gray-800 text-lg dark:text-gray-400 font-semibold"
-									>
-										Basic includes
-									</span>
-								</li>
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Create a <strong>Website</strong> that Converts</span
-									>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										<strong>On-Page SEO</strong> for Better Results</span
-									>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Maximize Your Local Online Presence using <strong
-											>Local Search
-										</strong> for Better Results</span
-									>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Get Listed, Get Discovered Fast using
-										<strong>Directory Listing</strong>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<!-- End Card -->
-
-						<!-- Card -->
-						<div
-							class="flex flex-col text-left bg-white border border-gray-200 rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
-						>
-							<h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">
-								NURTURE
-							</h4>
-
-							<p class="mt-6 mb-3">
-								<span
-									class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-									><span class="text-xl">$</span>250</span
-								><span class="text-xl">/month</span>
-							</p>
-							<p class="text-base text-gray-700">
-								Transform Leads into Loyal Customers.
-							</p>
-
-							<button
-								type="button"
-								class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
-							>
-								<a onclick="openCalendlyWidget()" href="#calendly">
-									Nurture your practice
-								</a>
-							</button>
-
-							<ul class="mt-7 space-y-2.5 text-sm">
-								<li class="flex space-x-2">
-									<span
-										class="text-gray-800 text-lg dark:text-gray-400 font-semibold"
-									>
-										Basic includes
-									</span>
-								</li>
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Upgrade your <strong>Social media</strong> presence
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Build Trust, Get More Customers using
-										<strong>Managed Reviews</strong></span
-									>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Convert Chats to Happy Customers using <strong
-											>Managed Inbound Chat
-										</strong>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<!-- End Card -->
-
-						<!-- Card -->
-						<div
-							class="flex flex-col bg-white border border-gray-200 rounded-2xl text-left p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
-						>
-							<h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">
-								GROWTH
-							</h4>
-
-							<p class="mt-6 mb-3">
-								<!-- <span class="block">Fee</span> -->
-								<span
-									class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-									><span class="text-xl">$</span>500</span
-								><span class="text-xl">/month</span>
-							</p>
-							<p class="text-base text-gray-700">
-								Unlock Your Clinic's Full Potential.
-							</p>
-
-							<button
-								type="button"
-								class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
-							>
-								<a onclick="openCalendlyWidget()" href="#calendly">
-									Start your growth now
-								</a>
-							</button>
-
-							<ul class="mt-7 space-y-2.5 text-sm">
-								<li class="flex space-x-2">
-									<span
-										class="text-gray-800 text-lg dark:text-gray-400 font-semibold"
-									>
-										Nurture features plus
-									</span>
-								</li>
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Connect with Patients through <strong>Advertising</strong>
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Win Patients with Strategic <strong>Promotion</strong>
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Engage Patients with Relevant <strong> Blog Content</strong>
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Get results with effective
-										<strong> email marketing</strong>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<!-- End Card -->
-
-						<!-- Card -->
-						<div
-							class="flex flex-col bg-white border border-gray-200 rounded-2xl text-left p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
-						>
-							<h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">
-								OFFLINE MARKETING
-							</h4>
-
-							<p class="mt-6 mb-3">
-								<!-- <span class="block">Fee</span> -->
-								<span
-									class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-									><span class="text-xl">$</span>250</span
-								><span class="text-xl">/month</span>
-							</p>
-							<p class="text-base text-gray-700">
-								Boost Your Brand with Strategic Offline Marketing
-							</p>
-
-							<button
-								type="button"
-								class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
-							>
-								<a onclick="openCalendlyWidget()" href="#calendly">
-									Start Connecting Now
-								</a>
-							</button>
-
-							<ul class="mt-7 space-y-2.5 text-sm">
-								<li class="flex space-x-2">
-									<span
-										class="text-gray-800 text-lg dark:text-gray-400 font-semibold"
-									>
-										Offline marketing includes
-									</span>
-								</li>
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Schedule <strong>PCP lunches</strong>
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										<strong>Advertise</strong> in local print media
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										<strong> Collaborate</strong> with community events
-									</span>
-								</li>
-
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Disease-specific <strong> patient brochures</strong>
-									</span>
-								</li>
-								<li class="flex space-x-2">
-									<img src="/icons/pageicons/check-circle-pink.svg" alt="" />
-									<span class="text-gray-800 dark:text-gray-400">
-										Concise <strong> physician care brochures</strong>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<!-- End Card -->
-					</div>
-					<!-- End Grid -->
-				</div>
-			</div>
-			<!-- End Hero -->
-
-			<!-- Pricing Details Accordion -->
-			<div
-				class="max-w-[85rem] md:max-w-7xl px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-16 mx-auto"
-			>
-				<!-- Title -->
-				<div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-					<h2
-						class="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 dark:text-gray-200"
-					>
-						Explore complete feature list
-					</h2>
-				</div>
-				<!-- End Title -->
-
-				<div class="hs-accordion-group mb-12 flex flex-col space-y-5">
-					<div
-						class="hs-accordion active bg-white border -mt-px rounded-md dark:bg-gray-800 dark:border-gray-700"
-						id="hs-bordered-heading-one"
-					>
-						<button
-							class="hs-accordion-toggle hs-accordion-active:text-[#FD3E81] inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition py-4 px-5 hover:text-gray-500 dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400"
-							aria-controls="hs-basic-bordered-collapse-one"
-						>
-							<svg
-								class="hs-accordion-active:hidden hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-								<path
-									d="M8 15.36L8 2.35999"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							<svg
-								class="hs-accordion-active:block hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							BASIC PLAN
-						</button>
-
-						<div
-							id="hs-basic-bordered-collapse-one"
-							class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
-							aria-labelledby="hs-bordered-heading-one"
-						>
-							<div class="p-6 pt-2 py-8 grid gap-8">
-								<div class="flex justify-between items-center">
-									<p class="">
+									<div class="grid gap-2 mt-4">
 										<span
-											class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-1</span
+										>
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Part time
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for Offline tasks <br /> Can handle Online tasks
+										</p>
+									</div>
+
+									<p class="mt-6 mb-3">
+										<span
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
+											><span class="text-xl">$</span>399</span
+										><span class="text-xl">/month</span>
+									</p>
+
+									<button
+										type="button"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+									>
+										<a onclick="openCalendlyWidget()" href="#calendly">
+											Get started
+										</a>
+									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												4 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 10PM-7AM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
+								</div>
+								<!-- End Card -->
+
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
+								>
+									<div class="grid gap-2 mt-4">
+										<span
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-1</span
+										>
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Full-Time Mid Shift
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for Offline tasks <br /> Can handle Online tasks
+										</p>
+									</div>
+
+									<p class="mt-6 mb-3">
+										<span
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
+											><span class="text-xl">$</span>750</span
+										><span class="text-xl">/month</span>
+									</p>
+
+									<button
+										type="button"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+									>
+										<a onclick="openCalendlyWidget()" href="#calendly">
+											Get started
+										</a>
+									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												8 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 2AM-10AM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
+								</div>
+								<!-- End Card -->
+
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
+								>
+									<div class="grid gap-2 mt-4">
+										<span
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-2</span
+										>
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Full - Time US Shift
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for US Shift tasks
+											<br /> Can handle Online & calls
+										</p>
+									</div>
+
+									<p class="mt-6 mb-3">
+										<span
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
 											><span class="text-xl">$</span>1000</span
 										><span class="text-xl">/month</span>
 									</p>
 
 									<button
 										type="button"
-										class="py-3 px-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
 									>
 										<a onclick="openCalendlyWidget()" href="#calendly">
-											Start with Basics
+											Get started
 										</a>
 									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												4 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 8AM-4PM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
 								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Website
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Custom website design to impress patients.
-										</p>
-									</div>
-
-									<div class="grid grid-rows-2 gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Designs that stand out</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Homepage, Providers, Contact Us
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Service page (up to 8)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Testimonials page
-												</span>
-											</li>
-										</ul>
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Dynamically display top Google reviews</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Patient self service (coming soon)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Free web chat (coming soon)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Free Hosting for two years
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											SEO - OnPage
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Boost visibility with targeted On-page SEO to attract
-											ideal patients
-										</p>
-									</div>
-
-									<div class="grid gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													SEO audit of your website</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Meta tags and keyword optimization
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Geography based keywords
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Compare competitor keywords
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													100 content topic ideas
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Local Search
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Maximize your online visibility to better connect with
-											prospects
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Appear in localized searches (i.e. "doctor near me")</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Create Local listing on Google using address, photos
-													and hours.
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Validate Google page
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Directory listing
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Update 70+ sites such Healthgrades, Vitals, Foursquare,
-											WebMD, with your information including address, contact
-											information and office hours
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid grid-cols-3 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Claim or create profiles in directories</span
-												>
-											</li>
-										</ul>
-									</div>
-								</div>
+								<!-- End Card -->
 							</div>
+							<!-- End Grid -->
 						</div>
-					</div>
 
-					<div
-						class="hs-accordion bg-white border -mt-px rounded-md dark:bg-gray-800 dark:border-gray-700"
-						id="hs-bordered-heading-two"
-					>
-						<button
-							class="hs-accordion-toggle hs-accordion-active:text-[#FD3E81] inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition py-4 px-5 hover:text-gray-500 dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400"
-							aria-controls="hs-basic-bordered-collapse-two"
-						>
-							<svg
-								class="hs-accordion-active:hidden hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
+						<!-- Medical Assistant - Clinical background Category - 2 -->
+						<div>
+							<h1
+								class="block text-5xl text-center tracking-tighter text-white lg:leading-none dark:text-white py-8"
 							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-								<path
-									d="M8 15.36L8 2.35999"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							<svg
-								class="hs-accordion-active:block hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
+								Medical Assistant - Clinical background
+							</h1>
+
+							<!-- Grid -->
+							<div
+								class="mt-6 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-3 xl:gap-6 lg:items-top"
 							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							NURTURE PLAN
-						</button>
-						<div
-							id="hs-basic-bordered-collapse-two"
-							class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-							aria-labelledby="hs-bordered-heading-two"
-						>
-							<div class="p-6 pt-2 py-8 grid gap-8">
-								<div class="flex justify-between items-center">
-									<p class="">
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
+								>
+									<div class="grid gap-2 mt-4">
 										<span
-											class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-											><span class="text-xl">$</span>250</span
-										><span class="text-xl">/month</span>
-									</p>
-
-									<button
-										type="button"
-										class="py-3 px-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
-									>
-										<a onclick="openCalendlyWidget()" href="#calendly">
-											Nurture your practice
-										</a>
-									</button>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-1</span
 										>
-											Social media
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Keep your social profiles full of fresh, engaging content
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Part time
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for Offline tasks <br /> Can handle Online tasks
 										</p>
 									</div>
 
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Build Facebook and Instagram accounts</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Publish informational content (10 posts/month)
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											SEO - Off Page
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Establish credibility with Search engines and rank higher
-											in search results and get found more often.
-										</p>
-									</div>
-
-									<div class="grid gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Analyze backlinks for your competition</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Build new links
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Managed Reviews
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											We build your online reputation through patient reviews
-											and manage reviews
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid grid-cols-3 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Email or text patients get reviews after appointment</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Respond to positive and negative patient reviews
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Validate Google page
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Manage inbound Chat
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Enhance User Interaction and Increase Conversion Rates for
-											Optimal Results
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid grid-cols-3 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Increase website conversion rates</span
-												>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Capture lead information for follow-up</span
-												>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Engage with website visitors in real-time
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div
-						class="hs-accordion bg-white border -mt-px rounded-md dark:bg-gray-800 dark:border-gray-700"
-						id="hs-bordered-heading-two"
-					>
-						<button
-							class="hs-accordion-toggle hs-accordion-active:text-[#FD3E81] inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition py-4 px-5 hover:text-gray-500 dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400"
-							aria-controls="hs-basic-bordered-collapse-two"
-						>
-							<svg
-								class="hs-accordion-active:hidden hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-								<path
-									d="M8 15.36L8 2.35999"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							<svg
-								class="hs-accordion-active:block hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							GROWTH PLAN
-						</button>
-						<div
-							id="hs-basic-bordered-collapse-two"
-							class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-							aria-labelledby="hs-bordered-heading-two"
-						>
-							<div class="p-6 pt-2 py-8 grid gap-8">
-								<div class="flex justify-between items-center">
-									<p class="">
+									<p class="mt-6 mb-3">
 										<span
-											class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
 											><span class="text-xl">$</span>500</span
 										><span class="text-xl">/month</span>
 									</p>
 
 									<button
 										type="button"
-										class="py-3 px-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
 									>
 										<a onclick="openCalendlyWidget()" href="#calendly">
-											Start Growing Now
+											Get started
 										</a>
 									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												4 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 10PM-7AM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
 								</div>
+								<!-- End Card -->
 
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Advertising
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Give your growth a turbo boost and acquire patients at the
-											fastest rate.
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Build ad campaigns with keywords, bids and
-													optimizations</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Custom landing page to identify prospects
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Emails for nurturing prospects
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Print Ads in local newspaper and church bulletin
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Promotions
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Establish credibility with Search engines and rank higher
-											in search results and get found more often.
-										</p>
-									</div>
-
-									<div class="grid gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Analyze customer lifetime value</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Identify profitable services
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Build a new promotion each month
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Email Campaigns
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Remind patients to do vaccines and follow ups. Send custom
-											marketing and offers to your patients to increase
-											utilization and revenue.
-										</p>
-									</div>
-
-									<div class="grid grid-rows-1 gap-4">
-										<ul class="grid grid-cols-3 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Integrated with your EMR</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Up to 10,000 emails each month
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Up to 2 new email campaigns
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="grid gap-4">
-									<div>
-										<h3
-											class="text-xl font-semibold text-gray-800 dark:text-gray-200"
-										>
-											Custom content - 2 blogs/month
-										</h3>
-										<p class="mt-1 text-gray-600 dark:text-gray-400">
-											Add fresh content that is custom created for you.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div
-						class="hs-accordion bg-white border -mt-px rounded-md dark:bg-gray-800 dark:border-gray-700"
-						id="hs-bordered-heading-two"
-					>
-						<button
-							class="hs-accordion-toggle hs-accordion-active:text-[#FD3E81] inline-flex items-center gap-x-3 w-full font-semibold text-left text-gray-800 transition py-4 px-5 hover:text-gray-500 dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400"
-							aria-controls="hs-basic-bordered-collapse-two"
-						>
-							<svg
-								class="hs-accordion-active:hidden hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-								<path
-									d="M8 15.36L8 2.35999"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							<svg
-								class="hs-accordion-active:block hs-accordion-active:text-[#FD3E81] hs-accordion-active:group-hover:text-[#FD3E81] hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
-								width="16"
-								height="16"
-								viewBox="0 0 16 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M1.5 8.85999L14.5 8.85998"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"></path>
-							</svg>
-							OFFLINE MARKETING PLAN
-						</button>
-						<div
-							id="hs-basic-bordered-collapse-two"
-							class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-							aria-labelledby="hs-bordered-heading-two"
-						>
-							<div class="p-6 pt-2 py-8 grid gap-8">
-								<div class="flex justify-between items-center">
-									<p class="">
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
+								>
+									<div class="grid gap-2 mt-4">
 										<span
-											class="font-bold text-3xl md:text-4xl xl:text-5xl text-gray-800 dark:text-gray-200"
-											><span class="text-xl">$</span>500</span
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-1</span
+										>
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Full-Time Mid Shift
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for Offline tasks <br /> Can handle Online tasks
+										</p>
+									</div>
+
+									<p class="mt-6 mb-3">
+										<span
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
+											><span class="text-xl">$</span>1000</span
 										><span class="text-xl">/month</span>
 									</p>
 
 									<button
 										type="button"
-										class="py-3 px-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-[#FD3E81] text-white hover:bg-[#E43975] focus:outline-none focus:ring-2 focus:ring-[#E43975] focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
 									>
 										<a onclick="openCalendlyWidget()" href="#calendly">
-											Start Connecting Now
+											Get started
 										</a>
 									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												8 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 2AM-10AM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
 								</div>
+								<!-- End Card -->
 
-								<div class="grid gap-4">
-									<div class="grid grid-rows-2 gap-4">
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Designs that stand out</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Homepage, Providers, Contact Us
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Service page (up to 8)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Testimonials page
-												</span>
-											</li>
-										</ul>
-										<ul class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Dynamically display top Google reviews</span
-												>
-											</li>
-
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Patient self service (coming soon)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Free web chat (coming soon)
-												</span>
-											</li>
-											<li class="flex space-x-1">
-												<svg
-													class="flex-shrink-0 h-6 w-6 text-[#FD3E81]"
-													width="16"
-													height="16"
-													viewBox="0 0 16 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M11.5219 4.0949C11.7604 3.81436 12.181 3.78025 12.4617 4.01871C12.7422 4.25717 12.7763 4.6779 12.5378 4.95844L6.87116 11.6251C6.62896 11.91 6.1998 11.94 5.9203 11.6916L2.9203 9.02494C2.64511 8.78033 2.62032 8.35894 2.86493 8.08375C3.10955 7.80856 3.53092 7.78378 3.80611 8.02839L6.29667 10.2423L11.5219 4.0949Z"
-														fill="currentColor"></path>
-												</svg>
-												<span class="text-gray-800 dark:text-gray-400">
-													Free Hosting for two years
-												</span>
-											</li>
-										</ul>
+								<!-- Card -->
+								<div
+									class="flex flex-col bg-white border border-gray-200 text-left rounded-2xl p-4 md:p-8 dark:bg-slate-900 dark:border-gray-700"
+								>
+									<div class="grid gap-2 mt-4">
+										<span
+											class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full font-medium bg-gray-800 text-white w-fit"
+											>Tier-2</span
+										>
+										<h4
+											class="font-semibold text-3xl text-gray-900 dark:text-gray-200"
+										>
+											Full - Time US Shift
+										</h4>
+										<p class="text-base text-gray-700">
+											Ideal for US Shift tasks
+											<br /> Can handle Online & calls
+										</p>
 									</div>
+
+									<p class="mt-6 mb-3">
+										<span
+											class="font-bold text-3xl md:text-4xl xl:text-5xl text-emerald-700 dark:text-gray-200"
+											><span class="text-xl">$</span>1500</span
+										><span class="text-xl">/month</span>
+									</p>
+
+									<button
+										type="button"
+										class="py-3 px-4 mt-4 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+									>
+										<a onclick="openCalendlyWidget()" href="#calendly">
+											Get started
+										</a>
+									</button>
+
+									<ul class="mt-7 space-y-2.5 text-sm">
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												4 Hours/Day, Mon-Fri</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Shift timing 8AM-4PM CST</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Dedicated Assistant</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Medical assisting trained</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Unlimited Work</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Entirely Managed</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Customer Success Manager</span
+											>
+										</li>
+										<li class="flex space-x-2">
+											<img
+												src="/icons/pageicons/check-circle-green.svg"
+												alt=""
+											/>
+											<span class="text-gray-800 dark:text-gray-400">
+												Call, Chat, Slack</span
+											>
+										</li>
+									</ul>
 								</div>
+								<!-- End Card -->
 							</div>
+							<!-- End Grid -->
 						</div>
 					</div>
 				</div>
+
+				<img
+					class="hero-gradient-circle-bottom"
+					src="/images/gradient-circle-large.svg"
+					alt=""
+				/>
 			</div>
+			<!-- End Hero -->
+
+			<!-- Testimonials -->
+			<div class="relative overflow-hidden">
+				<div class="bg-white min-h-[480px] m-auto flex">
+					<!-- Grid -->
+					<div
+						class="testimonial-container max-w-5xl bg-white p-8 py-10 flex lg:items-center rounded-md justify-center mx-auto gap-4"
+					>
+						<div>
+							<!-- Blockquote -->
+							<blockquote>
+								<img src="/images/quotes-big.svg" alt="" class="mb-8" />
+								<p
+									class="font-semibold text-gray-800 lg:text-3xl lg:leading-normal dark:text-gray-200 mb-4"
+								>
+									Cypress was crucial for our startup's cash conservation and
+									efficient ramp-up in our first year. Highly recommended.
+								</p>
+								<p
+									class="font-medium lg:text-xl text-gray-800 dark:text-gray-200"
+								>
+									Director - Beats cardiology
+								</p>
+							</blockquote>
+							<!-- End Blockquote -->
+						</div>
+
+						<img
+							src="/images/beatsCardiology-logo.png"
+							alt=""
+							style="width: 40%;"
+						/>
+					</div>
+					<!-- End Grid -->
+				</div>
+			</div>
+			<!-- End Testimonials -->
 		</div>
 
 		<BannerFooterSection />

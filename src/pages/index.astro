@@ -80,13 +80,13 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 		<div class="container md:max-w-full">
 			<!-- Hero -->
 			<div
-				class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-16 mx-auto"
+				class="max-w-[85rem] md:max-w-[95rem] px-4 py-12 sm:px-6 lg:px-16 lg:pb-16 lg:py-16 mx-auto"
 			>
 				<!-- Grid -->
 				<div
-					class="grid md:grid-cols-2 gap-12 md:gap-16 xl:gap-20 md:items-center"
+					class="grid sm:grid-cols-2 gap-12 md:gap-16 xl:gap-20 md:items-center"
 				>
-					<div>
+					<div class="flex flex-col md:gap-4">
 						<h1
 							class="block text-3xl tracking-tighter font-bold text-gray-800 lg:text-5xl lg:leading-tight dark:text-white"
 						>
@@ -105,7 +105,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 
 						<button
 							type="button"
-							class="py-3 px-4 mt-6 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
+							class="w-fit py-3 px-4 text-base md:py-4 md:px-4 md:text-lg mt-6 inline-flex calendly-open-button justify-center items-center gap-2 font-medium rounded-md border border-transparent bg-emerald-700 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
 						>
 							<a onclick="openCalendlyWidget()" href="#calendly">
 								Schedule a meeting with an expert
@@ -126,106 +126,6 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 				<!-- End Grid -->
 			</div>
 			<!-- End Hero -->
-
-			<!-- Why choose Cypress Banner -->
-			<div
-				class="banner--belowFold max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:py-16 mx-auto"
-			>
-				<div class="blob-left">
-					<img src="/images/gradientblob-left.svg" alt="" />
-				</div>
-				<!-- Title -->
-				<div
-					class="max-w-4xl mx-auto text-center mb-10 lg:mb-14 border border-gray-300 p-16 rounded-md shadow-sm"
-				>
-					<div class="flex flex-col gap-4">
-						<h2
-							class="text-2xl font-bold md:text-4xl text-gray-800 dark:text-white leading-tight"
-						>
-							Try Cypress, your affordable virtual medical assistant.
-						</h2>
-						<ul class="grid grid-rows-3 gap-5 justify-center mt-6">
-							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
-								<span
-									class="text-gray-800 dark:text-gray-400 text-2xl text-center"
-								>
-									Truly dedicated virtual assistant</span
-								>
-								<svg
-									class="flex-shrink-0 h-6 w-6"
-									width="16"
-									height="16"
-									viewBox="0 0 16 16"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
-										fill="currentColor"
-										class="fill-emerald-700"></path>
-									<path
-										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
-										fill="currentColor"
-										class="fill-white"></path>
-								</svg>
-							</li>
-
-							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
-								<span
-									class="text-gray-800 dark:text-gray-400 text-2xl text-center"
-								>
-									Works like a regular team member in your practice</span
-								>
-								<svg
-									class="flex-shrink-0 h-6 w-6"
-									width="16"
-									height="16"
-									viewBox="0 0 16 16"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
-										fill="currentColor"
-										class="fill-emerald-700"></path>
-									<path
-										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
-										fill="currentColor"
-										class="fill-white"></path>
-								</svg>
-							</li>
-
-							<li class="flex space-x-3 justify-center bg-white p-2 rounded-md">
-								<span class="text-gray-800 dark:text-gray-400 text-2xl">
-									Unlimited work. Monthly Fixed rate - starting $399/mo
-								</span>
-								<svg
-									class="flex-shrink-0 h-6 w-6"
-									width="16"
-									height="16"
-									viewBox="0 0 16 16"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z"
-										fill="currentColor"
-										class="fill-emerald-700"></path>
-									<path
-										d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z"
-										fill="currentColor"
-										class="fill-white"></path>
-								</svg>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Title -->
-				<div class="blob-right">
-					<img src="/images/gradientblob-left.svg" alt="" />
-				</div>
-			</div>
-			<!-- End Why choose Cypress Banner -->
 
 			<!-- Testimonials -->
 			<div class="relative overflow-hidden">
@@ -267,7 +167,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 
 			<!-- What Cypress VMAs Do -->
 			<div
-				class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-16 lg:py-32 mx-auto grid grid-auto-row gap-16"
+				class="max-w-[85rem] md:max-w-[95rem] px-4 py-12 sm:px-6 lg:px-16 lg:py-32 mx-auto grid grid-auto-row gap-16"
 			>
 				<div class="max-w-4xl text-center mx-auto">
 					<h2
@@ -472,6 +372,37 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 							</div>
 						</div>
 						<!-- End Icon Block -->
+						<!-- Icon Block -->
+						<div
+							class="text-center p-8 rounded-md flex flex-col justify-center items-center"
+							style="height: 100%"
+						>
+							<a
+								class="inline-flex items-center gap-2 mt-5 text-sm font-medium text-gray-900 hover:text-emerald-700"
+								href="/how-it-works"
+							>
+								<h3
+									class="text-xl font-bold dark:text-white underline decoration-emerald-500 underline-offset-8"
+								>
+									Learn how Cypress works
+								</h3>
+								<svg
+									class="w-4 h-auto"
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"></path>
+								</svg>
+							</a>
+						</div>
+						<!-- End Icon Block -->
 					</div>
 					<!-- End Icon Blocks -->
 				</div>
@@ -516,7 +447,9 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 			<!-- End Testimonials -->
 
 			<!-- Features -->
-			<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto lg:py-32">
+			<div
+				class="max-w-[85rem] md:max-w-[95rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto lg:py-32"
+			>
 				<div class="relative p-6 md:p-16">
 					<!-- Grid -->
 					<div
@@ -661,7 +594,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 									>
 										<img
 											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
-											src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											src="/images/schedule-call.png"
 											alt="Image Description"
 										/>
 									</div>
@@ -674,7 +607,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 									>
 										<img
 											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
-											src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											src="/images/success-manager.jpg"
 											alt="Image Description"
 										/>
 									</div>
@@ -687,7 +620,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 									>
 										<img
 											class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]"
-											src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
+											src="/images/virtual-assistant.png"
 											alt="Image Description"
 										/>
 									</div>
