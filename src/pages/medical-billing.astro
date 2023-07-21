@@ -52,10 +52,10 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 			<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 				<!-- Testimonials -->
 				<div class="relative overflow-hidden">
-					<div class="mx-auto bg-[#FEEFE5] min-h-[480px]">
+					<div class="mx-auto bg-[#FEEFE5] md:min-h-[480px]">
 						<!-- Grid -->
 						<div
-							class="testimonial-container max-w-5xl bg-[#FEEFE5] p-8 py-10 flex lg:items-center rounded-md justify-center mx-auto"
+							class="testimonial-container max-w-5xl bg-[#FEEFE5] p-8 py-10 flex flex-col md:flex-row lg:items-center rounded-md justify-center mx-auto"
 						>
 							<div>
 								<!-- Blockquote -->
@@ -81,6 +81,7 @@ import BannerFooterSection from '../components/BannerFooterSection.astro';
 								src="/images/director-covenanthealth.png"
 								alt=""
 								style="width: 40%;"
+								class="hidden md:block"
 							/>
 						</div>
 						<!-- End Grid -->
